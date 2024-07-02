@@ -31,14 +31,13 @@ export default function Form() {
     setMessage('');
 
     try {
-      const response = await axios.post('http://localhost:8000/addtodo', formState);
+      const response = await axios.post('https://backend-shalini.vercel.app/addtodo', formState);
       if (response.data.error) {
         setErrors(response.data.errors || {});
         setMessage(response.data.message || 'Failed to create todo.');
       } else {
         setMessage('Todo created successfully!');
-        setFormState({ todo: '', date: '' }); // Clear the form after submission
-        // Refresh the list of todos after adding a new one
+        setFormState({ todo: '', date: '' }); 
       }
     } catch (error) {
       console.error('API Error:', error);

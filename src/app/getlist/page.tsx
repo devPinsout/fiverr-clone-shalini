@@ -23,7 +23,7 @@ export default function Form() {
 
   const fetchTodos = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/readtodo'); // Replace with your GET API endpoint
+      const response = await axios.get('https://backend-shalini.vercel.app/readtodo'); // Replace with your GET API endpoint
       console.log("Data of Todo",response);
       setTodos(response.data?.data?.rows);
     } catch (error) {
