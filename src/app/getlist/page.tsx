@@ -25,7 +25,7 @@ export default function Form() {
     try {
       const response = await axios.get('https://backend-shalini.vercel.app/readtodo'); // Replace with your GET API endpoint
       console.log("Data of Todo",response);
-      setTodos(response.data?.data?.rows);
+      setTodos(response.data?.data);
     } catch (error) {
       console.error('Error fetching todos:', error);
     }
